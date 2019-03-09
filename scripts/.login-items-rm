@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+{ set +x; } 2>/dev/null
+
+usage() {
+    echo "usage: $(basename $0)" 1>&2
+    [[ $1 == "-h" ]] || [[ $1 == "--help" ]]; exit
+}
+
+[[ $1 == "-h" ]] || [[ $1 == "--help" ]] && usage "$@"
+
+[[ $# == 0 ]] && usage
+
+while [[ $# != 0 ]]; do
+    login-items list | grep -q "$1" || echo "SKIP: $1 not found"
+    login-items list | grep -q "$1" && {
+    osascript <<EOF
+tell application "System Events" to delete login item "$1"
+EOF
+    }
+    shift
+done;:
+

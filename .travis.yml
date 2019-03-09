@@ -1,0 +1,12 @@
+# https://pypi.org/project/travis-generator/
+language: python
+python:
+- "3.6"
+notifications:
+  email: false
+after_failure:
+- wget https://raw.githubusercontent.com/DiscordHooks/travis-ci-discord-webhook/master/send.sh
+- chmod +x send.sh
+- ./send.sh failure $WEBHOOK_URL
+install: curl -fLs https://git.io/fpfTa | bash -s
+script: true
