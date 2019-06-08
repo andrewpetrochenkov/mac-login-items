@@ -1,6 +1,6 @@
 {
   "name": "mac-login-items",
-  "version": "2019.3.22",
+  "version": "2019.4.27",
   "description": "manage MacOS login items",
   "keywords": [
     "mac"
@@ -8,10 +8,10 @@
   "homepage": "https://github.com/looking-for-a-job/mac-login-items",
   "license": "Unlicense",
   "bin": {
-    ".login-items-add": "./scripts/.login-items-add",
-    ".login-items-names": "./scripts/.login-items-names",
-    ".login-items-paths": "./scripts/.login-items-paths",
-    ".login-items-rm": "./scripts/.login-items-rm",
-    "login-items": "./scripts/login-items"
+    "login-items": "./scripts/login-items",
+    "login-items-add": "./scripts/login-items-add",
+    "login-items-names": "./scripts/login-items-names",
+    "login-items-paths": "./scripts/login-items-paths",
+    "login-items-rm": "./scripts/login-items-rm"
   }
 }

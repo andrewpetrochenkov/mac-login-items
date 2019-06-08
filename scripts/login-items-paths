@@ -10,6 +10,6 @@ usage() {
 
 [[ $# != 0 ]] && usage
 
-osascript <<EOF | tr , '\n' | sed 's/^[ \t]*//;s/[ \t]*$//'
+osascript <<EOF | tr , '\n' | grep -v "missing value" | sed 's/^[ \t]*//;s/[ \t]*$//'
 tell application "System Events" to get the path of every login item
 EOF

@@ -1,11 +1,6 @@
 #!/usr/bin/env bash
 { set +x; } 2>/dev/null
 
-set --
-[ -d /Applications/Übersicht.app ] && set -- "$@" /Applications/Übersicht.app
-[ -d /Applications/Übersicht.app ] && set -- "$@" /Applications/Growl.app
-
-
 usage() {
     echo "usage: $(basename $0) path ..." 1>&2
     [[ $1 == "-h" ]] || [[ $1 == "--help" ]]; exit
