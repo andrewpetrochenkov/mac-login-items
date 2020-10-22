@@ -11,12 +11,11 @@ usage() {
 [[ $# == 0 ]] && usage
 
 while [[ $# != 0 ]]; do
-    login-items list | grep -q "$1" || echo "SKIP: $1 not found"
-    login-items list | grep -q "$1" && {
+    login-items names | grep -q "$1" || echo "SKIP: $1 not found"
+    login-items names | grep -q "$1" && {
     osascript <<EOF
 tell application "System Events" to delete login item "$1"
 EOF
     }
     shift
 done;:
-
