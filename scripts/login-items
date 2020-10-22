@@ -7,7 +7,7 @@ usage: $(basename $0) command [args]
 
 Available commands:
     add                    add login items
-    list                   print login items names
+    names                  print login items names
     paths                  print login items paths
     rm                     remove login items
 
@@ -19,4 +19,3 @@ EOF
 [[ $1 == "-h" ]] || [[ $1 == "--help" ]] && usage "$@"
 
 "${BASH_SOURCE[0]%/*}"/"${BASH_SOURCE[0]##*/}"-"$1" "${@:2}"
-
